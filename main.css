@@ -70,5 +70,12 @@ a {
   text-decoration: none;
   justify-items: center;
   width: 100vw;
+}
 
+.dark-theme {
+  background-color: #06464b;
+}
+
+.dark-theme-boxes {
+  background-color: #04B1C8;
 }

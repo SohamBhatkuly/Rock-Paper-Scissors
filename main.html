@@ -10,30 +10,35 @@
 </head>
 
 <body>
+
+    <div class="dark-mode" onclick="dark()">
+        <input type="button" value="dark-mode" class="mode-button">
+    </div>
+
     <div class="play" id="play">
         <div class="result"> </div>
 
         <div class="options" id="options">
 
-            <div class="Rock" onclick="display('rock')">
+            <div class="Rock" id="Rock" onclick="display('rock')">
                 <img src="./images/rock1.png" width="300" height="200">
                 <h2>Rock</h2>
             </div>
 
-            <div class="Paper" onclick="display('paper')">
+            <div class="Paper" id="Paper" onclick="display('paper')">
                 <img src="./images/paper1.png" width="300" height="200">
                 <h2>Paper</h2>
             </div>
 
-            <div class="Scissor" onclick="display('scissor')">
+            <div class="Scissor" id="Scissor" onclick="display('scissor')">
                 <img src="./images/scissor1.png" width="300" height="200">
                 <h2>Scissor</h2>
             </div>
 
         </div>
-     
-            <div class="play-again"></div>
-    
+
+        <div class="play-again"></div>
+
     </div>
 </body>
 <script src="main.js"></script>

@@ -172,12 +172,12 @@ let display = (e) => {
            <h1>You Win!<h1>
          </div>
               <div class="options">
-        <div class="Scissor">
+        <div class="Scissor" id="Scissor">
         <h2>Your Choice</h2>
             <img src="./images/scissor1.png" width="300" height="200">
             <h2>Scissor</h2>
         </div>
-        <div class="${name}">
+        <div class="${name}" id="${name}">
         <h2>Computer's Choice</h2>
             <img src="${path}" width="300" height="200">
             <h2>${name}</h2>
@@ -196,12 +196,12 @@ let display = (e) => {
            <h1>You Lose!<h1>
          </div>
               <div class="options">
-        <div class="Scissor">
+        <div class="Scissor" id="Scissor">
         <h2>Your Choice</h2>
             <img src="./images/scissor1.png" width="300" height="200">
             <h2>Scissor</h2>
         </div>
-        <div class="${name}">
+        <div class="${name}" id="${name}">
         <h2>Computer's Choice</h2>
             <img src="${path}" width="300" height="200">
             <h2>${name}</h2>
@@ -245,4 +245,16 @@ let generate = () => {
     let g = Math.floor(Math.random() * (3) + 1);
     // console.log(g);
     return g;
+}
+
+let dark = () => {
+    let scissor = document.getElementById('Scissor');
+    let rock = document.getElementById('Rock');
+    let paper = document.getElementById('Paper');
+    document.body.classList.toggle('dark-theme');
+    console.log(scissor)
+    scissor.classList.toggle('dark-theme-boxes');
+    rock.classList.toggle('dark-theme-boxes');
+    paper.classList.toggle('dark-theme-boxes');
+
 }
