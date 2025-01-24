@@ -1,5 +1,17 @@
 let play = document.getElementById('play');
+let  isdark = false;
 
+
+let highscore = JSON.parse(localStorage.getItem("data"))||0;
+
+let displayScore = () => {
+  let score = document.getElementById('Score');
+  score.innerHTML = `
+  <div class="Score"><h3>Score:${highscore}</h3></div>
+  `
+}
+
+displayScore();
 
 
 let display = (e) => {
@@ -7,9 +19,19 @@ let display = (e) => {
     let a = opt.find((x) => c == x.id);
     console.log(a);
     let { id, name, path } = a;
-    if (e === "rock" && name=="Scissor" ) {
+  if (e === "rock" && name == "Scissor") {
+    highscore += 1;
+    localStorage.setItem("data", JSON.stringify(highscore))
+    // if (isdark) {
+    //      let scissor = document.getElementById('Scissor');
+    // let rock = document.getElementById('Rock');
+    //   let paper = document.getElementById('Paper');
+    //      scissor.classList.toggle('dark-theme-boxes');
+    // rock.classList.toggle('dark-theme-boxes');
+    // paper.classList.toggle('dark-theme-boxes');
+    //   }
         play.innerHTML = `
-                   
+                   <div class="Score"><h3>Score:${highscore}</h3></div>
         <div class="result">
                 <h1>You Win!<h1>
         
@@ -37,8 +59,9 @@ let display = (e) => {
     `;
     }
 
-       else if (e === "rock" && name=="Paper") {
-        play.innerHTML = `
+  else if (e === "rock" && name == "Paper") {
+    play.innerHTML = `
+                <div class="Score"><h3>Score:${highscore}</h3></div>
         <div class="result">
                 <h1>You Lose!<h1>
          </div>
@@ -62,7 +85,8 @@ let display = (e) => {
     `;
     }
             else if (e === "rock" && name=="Rock") {
-        play.innerHTML = `
+    play.innerHTML = `
+                <div class="Score"><h3> Score:${highscore}</h3></div>
         <div class="result">
                 <h1>Tie!<h1>
          </div>
@@ -86,8 +110,11 @@ let display = (e) => {
 
     `;
     }
-    else if (e === "paper" && name=="Rock") {
-        play.innerHTML = `
+  else if (e === "paper" && name == "Rock") {
+            highscore += 1;
+    localStorage.setItem("data", JSON.stringify(highscore))
+    play.innerHTML = `
+                <div class="Score"><h3>Score: ${highscore}</h3></div>
          <div class="result">
            <h1>You Win!<h1>
          </div>
@@ -113,7 +140,8 @@ let display = (e) => {
         `;
     }
         else if (e === "paper" && name=="Scissor") {
-        play.innerHTML = `
+    play.innerHTML = `
+                <div class="Score"><h3> Score: ${highscore}</h3></div>
          <div class="result">
            <h1>You Lose!<h1>
          </div>
@@ -140,7 +168,8 @@ let display = (e) => {
     }
         
         else if (e === "paper" && name=="Paper") {
-        play.innerHTML = `
+    play.innerHTML = `
+                <div class="Score"><h3>Score: ${highscore}</h3></div>
          <div class="result">
            <h1>Tie!<h1>
          </div>
@@ -166,8 +195,11 @@ let display = (e) => {
         `;
     }
 
-    else if(e==="scissor" && name=="Paper"){
-        play.innerHTML = `
+  else if (e === "scissor" && name == "Paper") {
+          highscore += 1;
+    localStorage.setItem("data", JSON.stringify(highscore))
+    play.innerHTML = `
+                <div class="Score"><h3>Score: ${highscore}</h3></div>
             <div class="result">
            <h1>You Win!<h1>
          </div>
@@ -191,7 +223,8 @@ let display = (e) => {
         `
     }
         else if(e==="scissor" && name=="Rock"){
-        play.innerHTML = `
+    play.innerHTML = `
+                <div class="Score"><h3>Score: ${highscore}</h3></div>
             <div class="result">
            <h1>You Lose!<h1>
          </div>
@@ -215,7 +248,8 @@ let display = (e) => {
         `
     }
        else if(e==="scissor" && name=="Scissor"){
-        play.innerHTML = `
+    play.innerHTML = `
+                <div class="Score"><h3>Score: ${highscore}</h3></div>
             <div class="result">
            <h1>Tie !<h1>
          </div>
@@ -248,13 +282,14 @@ let generate = () => {
 }
 
 let dark = () => {
-    let scissor = document.getElementById('Scissor');
-    let rock = document.getElementById('Rock');
-    let paper = document.getElementById('Paper');
+  if (isdark == false){
+    isdark = true;
+  }
+  else if (isdark == true) {
+    isdark = false;
+  }
+
     document.body.classList.toggle('dark-theme');
-    console.log(scissor)
-    scissor.classList.toggle('dark-theme-boxes');
-    rock.classList.toggle('dark-theme-boxes');
-    paper.classList.toggle('dark-theme-boxes');
+
 
 }

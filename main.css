@@ -12,11 +12,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 50vh;
   gap: 10px;
   margin-bottom: 0;
   margin-left: 10px;
   margin-right: 10px;
+  padding-bottom: 0;
 }
 
 .Rock {
@@ -73,9 +74,43 @@ a {
 }
 
 .dark-theme {
-  background-color: #06464b;
+  background-color: #0b949e;
 }
 
 .dark-theme-boxes {
-  background-color: #04B1C8;
+  background-color: #1a072a;
+}
+
+.mode-button {
+  padding: 10px;
+  background-color: #bfc0cb;
+  color: #af125a;
+  border: none;
+  border-radius: 2rem;
+  justify-content: center;
+}
+
+.dark-mode {
+  width: 100vw;
+  display: flex;
+  justify-content: end;
+  padding: 1rem 2rem;
+}
+.title {
+  justify-self: center;
+  color: #841f36;
+  font-size: 2rem;
+}
+
+.Score {
+  display: flex;
+  justify-content: end;
+  margin: 0;
+}
+h3 {
+  font-size: 1.5rem;
+  color: #841f36;
+  justify-content: end;
+  padding-right: 1rem;
+  margin: 0;
 }
