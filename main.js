@@ -49,7 +49,7 @@ let display = (e) => {
             <h2>${name}</h2>
         </div>
         </div>
-                <a href="main.html">
+                <a href="index.html">
         <div class="play-again">
 
         <h2>PLAY AGAIN!</h2>
